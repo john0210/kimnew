@@ -1,0 +1,11 @@
+.media-art-mv iframe {
+   /* margin-left: 15%; */
+   align-items: center;
+   /* padding-left: 30%; */
+}
+
+@media (max-width: 768px) {
+   .menu {
+      flex-direction: column;
+   }
+}

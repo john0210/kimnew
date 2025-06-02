@@ -1,0 +1,16 @@
+.art-works {
+    display: flexbox;
+    padding-left: 7%;
+}
+
+.art-works img {
+    width: 43%;
+    height: 43%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+}
