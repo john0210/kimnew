@@ -30,7 +30,8 @@ body .container main div {
 }
 
 body .container main div img {
-max-width: 80%;
+
+max-width: 51%;
 padding-top: 1.5rem;
 }
 
