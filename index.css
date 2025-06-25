@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+body {height: 94vh;
+      width: 94vw;
+      background-color: rgb(255, 255, 255);
+}
+
+body .container {
+    display: block;
+    height: 105%;
+    width: 67%;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+body .container header {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(210, 216, 229);
+    display: flex;
+}
+
+
+/* PC 버전 */
+body .container header .navbar_main {
+    position: fixed;
+    top: 0.2rem;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    color: #000;
+    z-index: 800;
+    /* 수정 */
+    animation: navbarBottom 1s forwards;
+}
+
+body .container header .navbar_main .navbar_links {
+    margin-right: 35%;
+}
+
+body .container header .navbar_main .navbar_links a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 17rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 0rem;
+}
+
+body .container header .navbar_main .navbar_links a:last-child {
+    margin-right: 0;
+}
+
+body .container header .navbar_main .navbar_links a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: rgb(16, 58, 150);
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+body .container header .navbar_main .navbar_links a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+body .container header .navbar_main .navbar_logo {
+    margin-left: 10%;
+    text-decoration: none;
+    color: #000;
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.navbar_scroll {
+    background-color: #fff;
+    z-index: 5;
+    border-bottom: 1px solid gray;
+}
+
+.navbar_scroll div a {
+    color: black;
+}
+
+.navbar_scroll a {
+    color: black;
+}
+
+@keyframes navbarBottom {
+    0% {
+        transform: translateY(-70%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* 모바일 버전 입력*/
+.navbar_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+.navbar_burger {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: #000000;
+    z-index: 1000;
+}
+
+.navbar_burger_back {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* 수정된 부분: display:none 제거, 대신 transform으로 숨기고 나타내기 */
+.navbar_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #0e0e0e;
+    padding: 0 2rem;
+    display: flex;
+    /* 항상 flex로 두되 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateX(100%);
+    /* 처음엔 숨김 */
+    z-index: 950;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.navbar_menu a {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    text-decoration: none;
+}
+
+.navbar_menu.active {
+    transform: translateX(0);
+}
+
+.navbar_overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* body .container header nav {
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0.65rem;
+}
+
+body .container header nav a {
+    text-decoration: none;
+    color: rgb(11, 76, 215);
+    font-weight: 500;
+} */
+
+body .container main {
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+/* 아래는 컨테이너 부분 */
+
+body .container main {
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 2rem;
+
+}
+
+body .container main section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body .container main section img {
+    display: block;
+    max-width: 35%;
+    padding-top: 3.5rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20%;
+    /* transform: scale(1.0);
+    transition: transform .4s; */
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shine 3s infinite; }
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    } }
+
+/* body .container main section img:hover {
+    transform: scale(1.07);
+    transition: transform .3s;
+} */
+/* 
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-4.5px);
+    } } */
+
+     
+
+/* .sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(rgb(253, 190, 227) 1px, transparent 1px);
+    background-size: 35px 35px;
+    animation: sparkle-move 4s linear infinite;
+}
+
+@keyframes sparkle-move {
+    0% {
+        background-position: 0 0;
+        opacity: 0.16;
+    }
+
+    50% {
+        background-position: 10px 10px;
+        opacity: 0.76;
+    }
+
+    100% {
+        background-position: 0 0;
+        opacity: 0.16;
+    }
+} */
+
+body .container main section p {
+    padding-top: 2rem;
+}
+
+body .container footer {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(210, 216, 229);
+}
+
+body .container footer address {
+    padding-top: 0.6rem;
+    color: rgb(16, 58, 150);
+    font-size: small;
+}
+
+/* @media (max-width: 768px) {
+    body .container {
+        width: 100%;
+    }
+    
+    body .container main section {
+        flex-direction: column;
+    }
+    body .container main section img {
+        max-width : 80%;
+        padding-top: 3rem;
+    }
+
+} */
+
+
+@media (max-width: 991.98px) {
+    body .container {
+        width: 100%;
+    }
+
+    body .container main section {
+        flex-direction: column;
+    }
+
+    body .container main section img {
+        max-width: 80%;
+        padding-top: 3rem;
+    }
+
+}
+
+/* 미디어 쿼리 */
+
+
+/* 기본 상태: PC용 메뉴 보임, 모바일 메뉴 숨김 */
+body .container header .navbar_main {
+    display: flex;
+}
+
+body .container header .navbar_burger {
+    display: none;
+}
+
+body .container header .navbar_menu {
+    display: none;
+    /* 모바일 메뉴 기본 숨김 */
+}
+
+/* 화면 너비 991.98px 이하 (모바일)일 때 */
+@media (max-width: 991.98px) {
+    body .container header .navbar_main {
+        display: none;
+        /* PC 메뉴 숨김 */
+    }
+
+    body .container header .navbar_burger {
+        display: block;
+        /* 햄버거 버튼 보임 */
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        color: rgb(16, 58, 150);
+        z-index: 1000;
+    }
+
+    body .container header .navbar_menu {
+        display: flex;
+        /* 모바일 메뉴 보임 */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgb(16, 58, 150);
+        padding: 0 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 950;
+        color: #fff;
+    }
+
+    body .container header .navbar_menu.active {
+        transform: translateX(0);
+    }
+
+    body .container header .navbar_overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.1s ease;
+        z-index: 900;
+    }
+
+    body .container header .navbar_overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* 닫기 버튼 */
+    body .container header .navbar_burger_back {
+        display: block;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        cursor: pointer;
+        color: #fff;
+        z-index: 1001;
+    }
+}
+
+/* 화면 너비 992px 이상 (PC)일 때 */
+@media (min-width: 992px) {
+    body .container header .navbar_main {
+        display: flex;
+        /* PC 메뉴 보임 */
+    }
+
+    body .container header .navbar_burger,
+    body .container header .navbar_burger_back,
+    body .container header .navbar_menu,
+    body .container header .navbar_overlay {
+        display: none;
+        /* 모바일 메뉴 관련 요소 숨김 */
+    }
+}

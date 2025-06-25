@@ -1,0 +1,53 @@
+@charset "uft-8";
+
+
+body {
+    height: 94vh;
+    width: 94vw;
+    background-color: rgb(255, 255, 255);
+}
+
+body .container {
+    display: block;
+    height: 105%;
+    width: 67%;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+body .container main {
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+
+}
+
+body .container main div {
+
+}
+
+body .container main div img {
+
+max-width: 51%;
+padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    body .container {
+        width: 100%;
+    }
+
+    body .container main div {
+        flex-direction: column;
+    }
+
+    body .container main div img {
+        max-width: 80%;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+}
