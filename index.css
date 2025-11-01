@@ -1,58 +1,53 @@
 @charset "utf-8";
 
-body {height: 94vh;
-      width: 94vw;
-      background-color: rgb(255, 255, 255);
+body {height: 100vh;
+      width: 100vw;
+      margin: 0 auto;
+      padding: 0
 }
 
 body .container {
     display: block;
-    height: 105%;
-    width: 67%;
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+    width: 100%;
 }
 
-body .container header {
+body .container > header {
     width: 100%;
-    height: 5%;
-    background-color: rgb(210, 216, 229);
-    display: flex;
+    height: 70px;
+    background-color: rgb(222, 225, 233);
 }
 
 
 /* PC 버전 */
 body .container header .navbar_main {
-    position: fixed;
-    top: 0.2rem;
-
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
     color: #000;
-    z-index: 800;
-    /* 수정 */
-    animation: navbarBottom 1s forwards;
 }
 
 body .container header .navbar_main .navbar_links {
-    margin-right: 35%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 280px; 
+    align-items: center;
+    justify-content: center; 
+    margin-top: 15px;  
 }
+
+
 
 body .container header .navbar_main .navbar_links a {
     text-decoration: none;
-    color: #000;
-    margin-right: 17rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    position: relative;
-    padding: 0.5rem 0rem;
+    color: rgb(16, 58, 150);
+    font-size: 25px;
+    font-weight: 400;
 }
+body .container header .navbar_main .navbar_links a:first-child {
+    font-size: 25px;
+}
+
 
 body .container header .navbar_main .navbar_links a:last-child {
     margin-right: 0;
@@ -60,13 +55,12 @@ body .container header .navbar_main .navbar_links a:last-child {
 
 body .container header .navbar_main .navbar_links a::before {
     content: '';
-    position: absolute;
     bottom: -1px;
     left: 50%;
     width: 0;
     height: 3px;
     background-color: rgb(16, 58, 150);
-    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
 }
 
 body .container header .navbar_main .navbar_links a:hover::before {
@@ -81,6 +75,19 @@ body .container header .navbar_main .navbar_logo {
     font-size: 2.3rem;
     font-weight: 500;
 }
+/* 푸터 부분 */
+
+body footer {
+    text-align: center;
+    background-color: rgb(222, 225, 233);
+    height: 70px;
+}
+
+body footer address {
+    padding-top: 20px;
+    color: rgb(16, 58, 150);
+}
+
 
 .navbar_scroll {
     background-color: #fff;
@@ -180,20 +187,6 @@ body .container header .navbar_main .navbar_logo {
     pointer-events: auto;
 }
 
-/* body .container header nav {
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 0.65rem;
-}
-
-body .container header nav a {
-    text-decoration: none;
-    color: rgb(11, 76, 215);
-    font-weight: 500;
-} */
 
 body .container main {
     width: 100%;
@@ -213,150 +206,22 @@ body .container main {
 }
 
 body .container main section {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 body .container main section img {
-    display: block;
-    max-width: 35%;
-    padding-top: 3.5rem;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 20%;
-    /* transform: scale(1.0);
-    transition: transform .4s; */
-}
-.image-container {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.image-container img {
-    display: block;
+    max-width: 1200px;
     width: 100%;
     height: auto;
-}
-
-.image-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.3) 50%,
-            rgba(255, 255, 255, 0) 100%);
-    animation: shine 3s infinite; }
-
-@keyframes shine {
-    0% {
-        left: -75%;
-    }
-
-    100% {
-        left: 125%;
-    } }
-
-/* body .container main section img:hover {
-    transform: scale(1.07);
-    transition: transform .3s;
-} */
-/* 
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-4.5px);
-    } } */
-
-     
-
-/* .sparkles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: radial-gradient(rgb(253, 190, 227) 1px, transparent 1px);
-    background-size: 35px 35px;
-    animation: sparkle-move 4s linear infinite;
-}
-
-@keyframes sparkle-move {
-    0% {
-        background-position: 0 0;
-        opacity: 0.16;
-    }
-
-    50% {
-        background-position: 10px 10px;
-        opacity: 0.76;
-    }
-
-    100% {
-        background-position: 0 0;
-        opacity: 0.16;
-    }
-} */
-
-body .container main section p {
-    padding-top: 2rem;
-}
-
-body .container footer {
-    width: 100%;
-    height: 5%;
-    background-color: rgb(210, 216, 229);
-}
-
-body .container footer address {
-    padding-top: 0.6rem;
-    color: rgb(16, 58, 150);
-    font-size: small;
-}
-
-/* @media (max-width: 768px) {
-    body .container {
-        width: 100%;
-    }
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
     
-    body .container main section {
-        flex-direction: column;
-    }
-    body .container main section img {
-        max-width : 80%;
-        padding-top: 3rem;
-    }
-
-} */
-
-
-@media (max-width: 991.98px) {
-    body .container {
-        width: 100%;
-    }
-
-    body .container main section {
-        flex-direction: column;
-    }
-
-    body .container main section img {
-        max-width: 80%;
-        padding-top: 3rem;
-    }
-
 }
+
+
 
 /* 미디어 쿼리 */
 
@@ -375,8 +240,8 @@ body .container header .navbar_menu {
     /* 모바일 메뉴 기본 숨김 */
 }
 
-/* 화면 너비 991.98px 이하 (모바일)일 때 */
-@media (max-width: 991.98px) {
+/* 화면 너비 1300px 이하 (모바일)일 때 */
+@media (max-width: 1300px) {
     body .container header .navbar_main {
         display: none;
         /* PC 메뉴 숨김 */
@@ -447,8 +312,8 @@ body .container header .navbar_menu {
     }
 }
 
-/* 화면 너비 992px 이상 (PC)일 때 */
-@media (min-width: 992px) {
+/* 화면 너비 1305px 이상 (PC)일 때 */
+@media (min-width: 1305px) {
     body .container header .navbar_main {
         display: flex;
         /* PC 메뉴 보임 */
