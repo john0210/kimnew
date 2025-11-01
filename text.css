@@ -20,11 +20,38 @@ body .container main {
 
 }
 
-body .container main div {}
+body .container main div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 15px;
+}
 
 body .container main div img {
-    max-width: 51%;
+    max-width: 400px;
+    width: 45%;
     padding-top: 1rem;
+    margin-left : 30px;
+}
+
+body p {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: 300;
+}
+
+body .artist-note {
+    margin-left : 30px;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+body .artist-note > p {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 /* 푸터 부분 */

@@ -81,6 +81,7 @@ body footer {
     text-align: center;
     background-color: rgb(222, 225, 233);
     height: 70px;
+    margin: 0;
 }
 
 body footer address {
@@ -201,8 +202,6 @@ body .container main {
     width: 100%;
     height: auto;
     background-color: rgb(255, 255, 255);
-    padding-bottom: 2rem;
-
 }
 
 body .container main section {
@@ -212,13 +211,18 @@ body .container main section {
 }
 
 body .container main section img {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     height: auto;
     padding-top: 30px;
     text-align: center;
     margin: 0 auto;
-    
+}
+
+body .container main section p {
+    font-size: 15px;
+    font-weight: 350;
+    margin-bottom: 19.5px;
 }
 
 
