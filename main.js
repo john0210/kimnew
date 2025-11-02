@@ -10,11 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let scrollPosition = 0;
 
-    // ===== 모바일 메뉴 열기/닫기 =====
+    // ===== 모바일 메뉴 열기 =====
     function openMenu() {
         scrollPosition = window.scrollY;
 
-        // 모바일 화면일 때만 body 고정
         if (window.innerWidth <= 1350) {
             body.style.position = "fixed";
             body.style.top = `-${scrollPosition}px`;
@@ -27,10 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
         navbarMenu.classList.add("active");
         navbarOverlay.classList.add("active");
         navbarBurgerBack.classList.add("active");
+    
+
+         // 🔴 추가: 햄버거 버튼 숨기기 (겹침 방지)
+        navbarBurger.style.display = "none";
     }
 
+    // ===== 모바일 메뉴 닫기 =====
     function closeMenu() {
-        // 모바일 화면일 때만 body 스타일 원복
         if (window.innerWidth <= 1350) {
             body.style.position = "";
             body.style.top = "";
@@ -38,27 +41,33 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.right = "";
             body.style.width = "";
             body.style.overflow = "";
+
+            // 스크롤 위치 복원
             window.scrollTo(0, scrollPosition);
         }
 
         navbarMenu.classList.remove("active");
         navbarOverlay.classList.remove("active");
         navbarBurgerBack.classList.remove("active");
+
+         // 🔵 추가: 메뉴 닫을 때 햄버거 버튼 다시 보이기
+        navbarBurger.style.display = "block";
     }
 
+    // ===== 햄버거 버튼 클릭 시 열기/닫기 =====
     navbarBurger?.addEventListener("click", () => {
         if (navbarMenu.classList.contains("active")) closeMenu();
         else openMenu();
     });
 
+    // 닫기 버튼 및 오버레이 클릭 시 닫기
     navbarBurgerBack?.addEventListener("click", closeMenu);
     navbarOverlay?.addEventListener("click", closeMenu);
 
-    // ===== 스크롤 네비게이션 =====
+    // ===== 스크롤 시 네비게이션 스타일 변경 =====
     function handleNavbarScroll() {
         if (!darkBackground || !navbar) return;
 
-        // 모바일 메뉴 열림 시 무시
         if (window.innerWidth <= 1350 && navbarMenu.classList.contains("active")) return;
 
         const scrollPos = window.scrollY;
@@ -74,19 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ===== Top 버튼 =====
     topButton?.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (window.innerWidth <= 1350 && navbarMenu.classList.contains("active")) {
+            closeMenu();
+            requestAnimationFrame(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     });
 
-    // ===== 모든 링크 클릭 시 처리 =====
+    // ===== 메뉴 내 링크 클릭 시 닫기 =====
     const menuLinks = document.querySelectorAll(".navbar_menu a, .navbar_main .navbar_links a");
-
     menuLinks.forEach(link => {
         link.addEventListener("click", function () {
             if (window.innerWidth <= 1350 && navbarMenu.classList.contains("active")) {
                 closeMenu();
             }
-            // PC 화면에서는 그냥 이동
         });
     });
 });
+
 

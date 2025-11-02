@@ -15,7 +15,7 @@ body, p {
     /* 또는 24px 처럼 고정 */
 }
 
-body {height: 100vh;
+body {
       width: 100vw;
       margin: 0 auto;
       padding: 0
@@ -108,6 +108,8 @@ body .container header .navbar_main .navbar_logo {
     /* 마우스 올리면 클릭 표시 */
     display: block;
     /* 처음에는 숨김, 스크롤 시 나타나게 */
+    pointer-events: auto;
+        /* 버튼은 클릭 가능 */
 }
 
 #topButton {
@@ -208,7 +210,7 @@ body footer address {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     /* 처음엔 숨김 */
     z-index: 950;
     color: #ffffff;
@@ -229,7 +231,7 @@ body footer address {
 }
 
 .navbar_overlay {
-    pointer-events: none;
+    pointer-events: auto;
     /* 메뉴 닫혔을 때 클릭 막지 않음 */
 }
 
@@ -315,19 +317,18 @@ body .container header .navbar_menu {
     body .container header .navbar_main {
         display: none;
         /* PC 메뉴 숨김 */
-        position: relative;
-        z-index: 1001;
+        
     }
 
     body .container header .navbar_burger {
         display: block;
         /* 햄버거 버튼 보임 */
         position: absolute;
-        top: 15px;
+        top: 10px;
         right: 15px;
         cursor: pointer;
         color: rgb(16, 58, 150);
-        z-index: 2000;
+        z-index: 1800;
     }
 
    
@@ -336,7 +337,7 @@ body .container header .navbar_menu {
         /* 모바일 메뉴 보임 */
         position: fixed;
         top: 0;
-        right: -100%; /*처음엔 화면 밖에*/
+        right: 0%; /*처음엔 화면 밖에*/
         width: 70%;
         height: 100%;
         background-color: rgb(16, 58, 150);
@@ -352,7 +353,7 @@ body .container header .navbar_menu {
 
     body .container header .navbar_menu.active {
         transform: translateX(0);
-        right: 0; /*활성화 시 화면 안으로*/
+      
     }
 
     body .container header .navbar_overlay {
