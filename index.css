@@ -266,8 +266,8 @@ body .container header .navbar_menu {
         display: block;
         /* 햄버거 버튼 보임 */
         position: absolute;
-        top: 10px;
-        right: 17px;
+        top: 15px;
+        right: 25px;
         cursor: pointer;
         color: rgb(16, 58, 150);
     }
@@ -279,7 +279,7 @@ body .container header .navbar_menu {
         position: fixed;
         top: 0;
         right: -100%; /*처음엔 화면 밖에*/
-        width: 50%;
+        width: 70%;
         height: 100%;
         background-color: rgb(16, 58, 150);
         padding: 0 2rem;
