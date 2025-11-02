@@ -321,7 +321,10 @@ body .container header .navbar_menu {
     }
 
     body .container header .navbar_burger {
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 150px;
         /* 햄버거 버튼 보임 */
         position: absolute;
         top: 10px;
@@ -334,8 +337,7 @@ body .container header .navbar_menu {
     body .navbar_burger a img {
         width: 150px;
         height: auto;
-        margin-right: 250px;
-        margin-bottom: 2px;
+        margin-top: 8px;
     }
    
     body .container header .navbar_menu {
