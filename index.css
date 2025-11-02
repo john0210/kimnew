@@ -252,6 +252,14 @@ body .container main section p {
 
 /* 미디어 쿼리 */
 
+/* 메뉴 열림 시 body 스크롤 방지 */
+.body-no-scroll {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none;
+    /* iOS/모바일에서 터치 이동 방지 */
+}
+
 
 /* 기본 상태: PC용 메뉴 보임, 모바일 메뉴 숨김 */
 body .container header .navbar_main {
