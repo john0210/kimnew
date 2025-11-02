@@ -150,6 +150,7 @@ body footer address {
     padding-bottom: 10px;
     align-items: center;
     z-index: 2000;
+    
 }
 
 .navbar_burger_back {
@@ -228,6 +229,17 @@ body .container main section img {
     padding-top: 30px;
     text-align: center;
     margin: 0 auto;
+    /* 이미지 적용 효과 */
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 4s ease forwards;
+}
+/* 서서히 떠오르는 효과 적용 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 body .container main section p {
@@ -255,11 +267,16 @@ body .container header .navbar_menu {
     /* 모바일 메뉴 기본 숨김 */
 }
 
-/* 화면 너비 1300px 이하 (모바일)일 때 */
-@media (max-width: 1300px) {
+/* 화면 너비 1350px 이하 (모바일)일 때 */
+@media (max-width: 1350px) {
+    body .container header {
+        position: relative;
+    }
+
     body .container header .navbar_main {
         display: none;
         /* PC 메뉴 숨김 */
+        position: relative;
     }
 
     body .container header .navbar_burger {
@@ -267,9 +284,10 @@ body .container header .navbar_menu {
         /* 햄버거 버튼 보임 */
         position: absolute;
         top: 15px;
-        right: 25px;
+        right: 15px;
         cursor: pointer;
         color: rgb(16, 58, 150);
+        z-index: 2000;
     }
 
    
@@ -319,7 +337,7 @@ body .container header .navbar_menu {
 
     /* 닫기 버튼 */
     body .container header .navbar_burger_back {
-        display: block;
+        display: none;
         position: fixed;
         top: 1.5rem;
         right: 1.5rem;
@@ -329,8 +347,8 @@ body .container header .navbar_menu {
     }
 }
 
-/* 화면 너비 1305px 이상 (PC)일 때 */
-@media (min-width: 1305px) {
+/* 화면 너비 1355px 이상 (PC)일 때 */
+@media (min-width: 1355px) {
     body .container header .navbar_main {
         display: flex;
         /* PC 메뉴 보임 */
