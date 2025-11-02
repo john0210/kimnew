@@ -325,12 +325,18 @@ body .container header .navbar_menu {
         /* 햄버거 버튼 보임 */
         position: absolute;
         top: 10px;
-        right: 15px;
+        right: 3.5%;
         cursor: pointer;
         color: rgb(255, 255, 255);
         z-index: 1800;
     }
-
+    
+    body .navbar_burger a img {
+        width: 150px;
+        height: auto;
+        margin-right: 250px;
+        margin-bottom: 2px;
+    }
    
     body .container header .navbar_menu {
         display: flex;
@@ -405,7 +411,8 @@ body .container header .navbar_menu {
     body .container header .navbar_burger,
     body .container header .navbar_burger_back,
     body .container header .navbar_menu,
-    body .container header .navbar_overlay {
+    body .container header .navbar_overlay,
+    body .navbar_burger > img {
         display: none;
         /* 모바일 메뉴 관련 요소 숨김 */
     }
