@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
          // 🔴 추가: 햄버거 버튼 숨기기 (겹침 방지)
-        navbarBurger.style.display = "none";
+        navbarBurger.style.visibility = "hidden"; // 공간 유지
     }
 
     // ===== 모바일 메뉴 닫기 =====
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navbarBurgerBack.classList.remove("active");
 
          // 🔵 추가: 메뉴 닫을 때 햄버거 버튼 다시 보이기
-        navbarBurger.style.display = "block";
+        navbarBurger.style.visibility = "visible";
     }
 
     // ===== 햄버거 버튼 클릭 시 열기/닫기 =====
