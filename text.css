@@ -57,6 +57,19 @@ body .container main div img {
     margin-left : 30px;
 }
 
+body p .short-line-border {
+    display: inline-block;
+    /* 너비와 높이 설정을 위해 inline-block으로 변경 */
+    width: 70px;
+    /* 원하는 줄 길이 설정 */
+    border-bottom: 2px solid rgb(174, 174, 174);
+    /* 줄 스타일 설정 */
+    /* margin: 5px 0; */
+    /* 줄 위아래 여백 설정 */
+    /* vertical-align: middle; */
+    /* 텍스트와 세로 정렬 */
+}
+
 body p {
     font-size: 20px;
     margin-left: 30px;
