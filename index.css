@@ -1,4 +1,7 @@
 @charset "utf-8";
+html, body {
+     overflow-x: hidden;
+}
 
 body {height: 100vh;
       width: 100vw;
@@ -119,8 +122,8 @@ body footer address {
 
 /* 모바일 버전 입력*/
 .navbar_overlay {
-    position: fixed;
-    top: 0;
+    /* position: fixed; */
+    bottom: 14px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -131,18 +134,14 @@ body footer address {
     transition: opacity 0.1s ease;
 }
 
-.navbar_burger {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    color: #000000;
-    z-index: 1000;
+.navbar_burger > svg {
+    padding-bottom: 10px;
+    align-items: center;
+    z-index: 2000;
 }
 
 .navbar_burger_back {
-    position: fixed;
-    top: 1.5rem;
+    /* position: fixed; */
     right: 1.5rem;
     cursor: pointer;
     color: #fff;
@@ -254,20 +253,20 @@ body .container header .navbar_menu {
     body .container header .navbar_burger {
         display: block;
         /* 햄버거 버튼 보임 */
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
+        position: absolute;
+        top: 10px;
+        right: 17px;
         cursor: pointer;
         color: rgb(16, 58, 150);
-        z-index: 1000;
     }
 
+   
     body .container header .navbar_menu {
         display: flex;
         /* 모바일 메뉴 보임 */
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%; /*처음엔 화면 밖에*/
         width: 50%;
         height: 100%;
         background-color: rgb(16, 58, 150);
@@ -283,11 +282,13 @@ body .container header .navbar_menu {
 
     body .container header .navbar_menu.active {
         transform: translateX(0);
+        right: 0; /*활성화 시 화면 안으로*/
     }
 
     body .container header .navbar_overlay {
         display: block;
         position: fixed;
+        inset: 0;
         top: 0;
         left: 0;
         width: 100%;
@@ -295,7 +296,7 @@ body .container header .navbar_menu {
         background-color: rgba(0, 0, 0, 0.5);
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.1s ease;
+        transition: opacity 0.3s ease;
         z-index: 900;
     }
 
@@ -312,7 +313,7 @@ body .container header .navbar_menu {
         right: 1.5rem;
         cursor: pointer;
         color: #fff;
-        z-index: 1001;
+        z-index: 2000;
     }
 }
 
