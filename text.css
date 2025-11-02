@@ -37,6 +37,7 @@ body .container main div img {
 body p {
     font-size: 20px;
     margin-left: 30px;
+    margin-top: 10px;
     margin-right: 30px;
     font-weight: 300;
 }
