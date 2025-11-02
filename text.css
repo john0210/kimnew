@@ -1,5 +1,25 @@
-@charset "uft-8";
+@charset "utf-8";
+/* 버튼 컨테이너를 푸터 바로 위에 고정 */
+.top-button-container {
+    position: fixed;
+    /* 스크롤해도 화면에 고정 */
+    bottom: 80px;
+    /* 푸터 위쪽 여백 조정, 푸터 높이에 따라 조절 */
+    right: 20px;
+    /* 화면 오른쪽 여백 */
+    z-index: 700;
+    /* 다른 요소 위로 올라오게 */
+    cursor: pointer;
+    /* 마우스 올리면 클릭 표시 */
+    display: block;
+    /* 처음에는 숨김, 스크롤 시 나타나게 */
+}
 
+#topButton {
+    width: 50px;
+    /* 버튼 크기 조절 */
+    height: 50px;
+}
 
 body {
     height: 100vh;
@@ -54,6 +74,10 @@ body .artist-note > p {
     margin-left: 0px;
     margin-right: 0px;
 }
+
+
+
+
 
 /* 푸터 부분 */
 
