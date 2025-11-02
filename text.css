@@ -37,9 +37,10 @@ body .container {
 
 body .container main {
     width: 100%;
+    max-width: 1400px;
     height: auto;
     background-color: rgb(255, 255, 255);
-
+    margin: 0 auto;
 }
 
 body .container main div {
@@ -85,7 +86,7 @@ body .artist-note > p {
 
 body footer {
     text-align: center;
-    background-color: rgb(210, 216, 229);
+    background-color: rgb(15, 15, 15);
     height: 70px;
 }
 
