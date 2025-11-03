@@ -1,9 +1,8 @@
-@charset "uft-8";
+@charset "utf-8";
 
 
 body {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     padding: 0
 }
@@ -14,26 +13,47 @@ body .container {
 }
 
 body .container main {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    max-width: 1400px;
     background-color: rgb(255, 255, 255);
-
+    margin: 0 auto;
 }
 
 body .container main div {
-
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 35px;
+    margin: 0 auto; 
+    justify-items: center; /* ✅ 가운데 정렬 */   
 }
 
-body .container main div img {
-max-height: 8%;
-padding-top: 1rem;
+body .container main div .image-box {
+    border: 1px solid #707070;
+    padding: 6px;
+    width: 100%;
+}
+
+body .container main div .image-box > img {
+    width: 99%;
+    margin: 0 auto;
+}
+
+body .container main div .image-box > span {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    color: #272727;
+    margin: 0 auto;
 }
 
 /* 푸터 부분 */
 
 body footer {
     text-align: center;
-    background-color: rgb(210, 216, 229);
+    background-color: rgb(15, 15, 15);
     height: 70px;
 }
 
@@ -41,20 +61,11 @@ body footer address {
     padding-top: 20px;
 }
 
+
 @media (max-width: 768px) {
-    body .container {
-        width: 100%;
-    }
-
     body .container main div {
-        flex-direction: column;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
     }
-
-    body .container main div img {
-        max-width: 80%;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-
 }
 
