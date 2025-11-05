@@ -2,8 +2,7 @@
 
 
 body {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     padding: 0
 }
@@ -13,27 +12,56 @@ body .container {
     width: 100%;
 }
 body .container main {
-    width: 100%;
-    height: auto;
+    max-width: 1400px;
     background-color: rgb(255, 255, 255);
-
+    margin: 0 auto;
+    display: block;
 }
 
 body .container main div {
 
 }
 
-body .container main div img {
-
-max-width: 51%;
-padding-top: 1.5rem;
+body .container main .contact-img {
+    margin: 0 auto;
+    display: block;
+    max-width: 600px;
+    width: 70%;
+    padding-top: 35px;
+     /* 이미지 적용 효과 */
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 4s ease forwards;
 }
+
+/* 서서히 떠오르는 효과 적용 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body .container main .instagram {
+    max-width: 90px;
+    width: 15%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;   
+}
+
+body .container main div p {
+    text-align: center;
+    padding-bottom: 42px;
+    color: #2c2c2c;
+}
+
 
 /* 푸터 부분 */
 
 body footer {
     text-align: center;
-    background-color: rgb(210, 216, 229);
+    background-color: #0f0f0f;
     height: 70px;
 }
 
